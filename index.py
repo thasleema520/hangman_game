@@ -28,9 +28,10 @@ quizword = random.choice(words)
 display = []
 for item in quizword:
     display.append("_")
-print("Guess the Word:")
+print("Guess the Word! you have 6 chances")
 print(display)
-for j in range(6):
+n = 6
+while n:
     print("Enter an alphabet:")
     sub = input()
     res = update(sub, display, quizword)
@@ -38,6 +39,7 @@ for j in range(6):
         print("YES!! you Win")
         break
     else:
+        n -= 1
         print("Try Again!")
 if check(res, quizword) == 0:
-    print("Loss")
+    print("You Loss! Better luck next time.")
