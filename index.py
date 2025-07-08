@@ -22,7 +22,7 @@ def check(res, quizword):
         return 0
 
 
-words = ["apple", "banana", "orange", "sweetpotato", "fig"]
+words = ["apple", "banana", "orange", "sweetpotato", "fig","guava","mangosteen","strawberry"]
 quizword = random.choice(words)
 
 display = []
@@ -38,8 +38,9 @@ while n:
     if check(res, quizword):
         print("YES!! you Win")
         break
-    else:
+    elif sub not in quizword:
         n -= 1
-        print("Try Again!")
-if check(res, quizword) == 0:
-    print("You Loss! Better luck next time.")
+        print(res)
+        print(f"Try Again!you have {n} chances")
+if n==0:
+    print("You Loss!cant make in 6 chances. Better luck next time.")
